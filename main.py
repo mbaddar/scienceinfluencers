@@ -23,7 +23,7 @@ from flask_wtf import FlaskForm
 from json2table import convert
 from wtforms import TextField, validators
 
-
+# Need to move that class
 class User(UserBase):
   
     def __init__(self, email, username = None, authenticated = False):
