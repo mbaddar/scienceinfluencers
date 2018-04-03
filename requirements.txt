@@ -6,3 +6,5 @@ wtforms
 flask_navigation
 unirest
 json2table
+pandas
+numpy
