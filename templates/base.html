@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+  <title>QMUL ECS781P - 2018</title>
+
+  <!-- CSS  -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        {% for item in nav.top %}
+        <li class="{{ 'active' if item.is_active else '' }}">
+        <a href="{{ item.url }}">{{ item.label }}</a>
+        </li>
+        {% endfor %}
+        {% if current_user is not none and current_user.is_authenticated%}
+          <li class="active">
+              <a href="/logout">Logout</a>
+          </li>
+        {% else%}
+          <li class="active">
+              <a href="/login">Login</a>
+          </li>
+      {% endif%}
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        {% for item in nav.top %}
+        <li class="{{ 'active' if item.is_active else '' }}">
+        <a href="{{ item.url }}">{{ item.label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">{% block title %}{% endblock %}</h1>
+      <div class="row center">
+          {% block content %}{% endblock %}
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4">We are a startup.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Visit</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Our homepage</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:youremail@qmul.ac.uk">youremail@qmul.ac.uk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Template made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize.</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <!-- Compiled and minified materialize JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  </body>
+</html>

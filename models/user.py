@@ -11,12 +11,12 @@ class User():
   def is_authenticated(self):
     return True
 
-  @staticmethod
-  def find_or_create_by_email(email):
+  #@staticmethod
+  def find_or_create_by_email(self, email):
     return User(email)
 
-  @staticmethod
-  def find_by_id(id):
+  #@staticmethod
+  def find_by_id(self, id):
     return User(id)
 
 # this is what it might look like if we were a real application

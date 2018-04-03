@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} Welcome! {% endblock %}
+{% block content %}
+      <h5 class="header col s12 light">
+        Visit our app written in Flask+Python
+        {% if current_user.is_authenticated %}
+          {{ current_user }}
+        {% else %}
+          guest
+        {% endif%}
+      
+      </h5>
+      </div>
+      <div class="row center">
+        <a href="/emotion/" id="download-button" class="btn-large waves-effect waves-light orange">Emotions</a>
+      </div>
+{% endblock %}

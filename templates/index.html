@@ -1,6 +1,18 @@
-<html>
-<body>
-  Hooray, you are logged in as:
-  {{ current_user.email }}
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %} Welcome! 
+{% if current_user.is_authenticated %}
+{{ current_user.username }}
+{% else %}
+guest
+{% endif%}
+
+{% endblock %}
+{% block content %}
+      <h5 class="header col s12 light">
+        Visit our app written in Flask+Python
+      </h5>
+      </div>
+      <div class="row center">
+        <a href="/testapi/" id="download-button" class="btn-large waves-effect waves-light orange">Test Api</a>
+      </div>
+{% endblock %}

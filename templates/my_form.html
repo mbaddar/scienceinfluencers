@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} API Test
+{% endblock %}
+{% block content %}
+<!-- <div class="row center">
+<img src="{{ url_for('static', filename = 'img/'+picture)}}", width=300, quality=95 />
+</div> -->
+<form action="" method="POST">
+ 	{{ form.csrf_token }}
+ 	{{ form.message.label() }}
+ 	{{ form.message(size=200) }}
+    <input type=submit value="Send">
+</form>
+
+{{ render|safe }}
+{% endblock %}

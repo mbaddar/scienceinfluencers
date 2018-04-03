@@ -1,3 +1,8 @@
 rauth
 Flask
 Flask-Login
+flask_wtf
+wtforms
+flask_navigation
+unirest
+json2table
