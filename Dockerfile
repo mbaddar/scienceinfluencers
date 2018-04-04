@@ -3,6 +3,7 @@ FROM frolvlad/alpine-python3
 # Inser those below pip install pandas && \ if needed:
 # pip install scipy && \
 # pip install scikit-learn && \
+# pip install numpy && \
 
 RUN apk add --no-cache \
         --virtual=.build-dependencies \
@@ -12,7 +13,6 @@ RUN apk add --no-cache \
     \
     ln -s locale.h /usr/include/xlocale.h && \
     \
-    pip install numpy && \
     pip install pandas && \
     \
     rm -r /root/.cache && \

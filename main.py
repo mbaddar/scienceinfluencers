@@ -11,7 +11,7 @@ import requests
 from flask import (Flask, abort, redirect, render_template, request, session,
                    url_for, flash)
 import pandas as pd
-import numpy as np
+#import numpy as np
 from auth import OAuthSignIn
 from flask_login import UserMixin as UserBase
 #from models.user import User as UserBase
