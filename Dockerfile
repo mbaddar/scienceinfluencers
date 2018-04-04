@@ -11,6 +11,8 @@ RUN apk add --no-cache \
         musl-dev python3-dev openblas-dev && \
     apk add libstdc++ openblas && \
     \
+    apt-get install gcc
+    \
     ln -s locale.h /usr/include/xlocale.h && \
     \
     pip install pandas && \
