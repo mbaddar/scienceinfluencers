@@ -1,4 +1,6 @@
-# science_influencers
+# Science Infuencers: 
+
+An ArXiv paper search tool.
 
 * Arxiv API to search for papers
 * Semantic Scholar to get influence and citation velocity
