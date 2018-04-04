@@ -7,13 +7,12 @@ FROM frolvlad/alpine-python3
 
 RUN apk add --no-cache \
         --virtual=.build-dependencies \
-        g++ gfortran file binutils \
+        g++ gfortran file binutils py3-greenlet\
         musl-dev python3-dev openblas-dev build-base gcc && \
     apk add libstdc++ openblas && \
     \
     ln -s locale.h /usr/include/xlocale.h && \
     \
-    pip install py3-greenlet && \ 
     pip install pandas && \
     \
     rm -r /root/.cache && \
