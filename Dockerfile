@@ -1,5 +1,9 @@
 FROM frolvlad/alpine-python3
 
+# Inser those below pip install pandas && \ if needed:
+# pip install scipy && \
+# pip install scikit-learn && \
+
 RUN apk add --no-cache \
         --virtual=.build-dependencies \
         g++ gfortran file binutils \
@@ -10,8 +14,6 @@ RUN apk add --no-cache \
     \
     pip install numpy && \
     pip install pandas && \
-    pip install scipy && \
-    pip install scikit-learn && \
     \
     rm -r /root/.cache && \
     find /usr/lib/python3.*/ -name 'tests' -exec rm -r '{}' + && \
