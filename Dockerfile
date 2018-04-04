@@ -8,12 +8,10 @@ FROM frolvlad/alpine-python3
 RUN apk add --no-cache \
         --virtual=.build-dependencies \
         g++ gfortran file binutils \
-        musl-dev python3-dev openblas-dev && \
+        musl-dev python3-dev openblas-dev build-base && \
     apk add libstdc++ openblas && \
     \
     ln -s locale.h /usr/include/xlocale.h && \
-    \
-    apt-get install gcc && \
     \
     pip install pandas && \
     \
