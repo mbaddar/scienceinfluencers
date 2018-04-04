@@ -9,4 +9,11 @@ Future work:
  * Streaming
  * UX: Sorting and filtering
  * Timeline 
+ * Twitter
+ * L8N
+ * DB
+ * Pagination
+ * Sort and filter
+ * Add more query capabilities: Search by title, author, etc
+
  

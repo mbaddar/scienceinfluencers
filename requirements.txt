@@ -8,3 +8,6 @@ unirest
 json2table
 pandas
 numpy
+beautifulsoup4
+auth
+

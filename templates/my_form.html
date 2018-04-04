@@ -7,8 +7,9 @@
 </div> -->
 <form action="" method="POST">
  	{{ form.csrf_token }}
- 	{{ form.message.label() }}
- 	{{ form.message(size=200) }}
+ 	{{ form.search_text.label() }}
+	{{ form.search_text(size=100) }}
+	{{ form.nextPage}} 
     <input type=submit value="Send">
 </form>
 
