@@ -13,7 +13,6 @@ Future work:
  * L8N
  * DB
  * Pagination
- * Sort and filter
  * Add more query capabilities: Search by title, author, etc
 
  
