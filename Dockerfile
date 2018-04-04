@@ -9,7 +9,7 @@ RUN apk add --no-cache \
         --virtual=.build-dependencies \
         g++ gfortran file binutils \
         musl-dev python3-dev openblas-dev build-base gcc && \
-    apk add libstdc++ openblas && \
+    apk add libstdc++ openblas py3-greenlet && \
     \
     ln -s locale.h /usr/include/xlocale.h && \
     \
