@@ -7,5 +7,5 @@ flask_navigation
 json2table
 pandas
 beautifulsoup4
-auth
+python-oauth2
 
