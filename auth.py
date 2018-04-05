@@ -38,6 +38,7 @@ class GoogleSignIn(OAuthSignIn):
         super(GoogleSignIn, self).__init__('google')
         googleinfo = urllib.request.urlopen('https://accounts.google.com/.well-known/openid-configuration')
         google_params = json.load(googleinfo)
+        print("Google Params " + google_params)
         self.service = OAuth2Service(
                 name='google',
                 client_id=self.consumer_id,
