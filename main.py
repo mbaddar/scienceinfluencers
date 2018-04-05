@@ -107,8 +107,8 @@ def load_user(id):
 @login_manager.request_loader
 def request_loader(request):
     email = request.form.get('email')
-    if email is not None:
-        print("email: " + email)
+    # if email is not None:
+    #     print("email: " + email)
     # if email not in users:
     #     return
 
@@ -160,7 +160,7 @@ def oauth_callback(provider):
     username, email = oauth.callback()
     if not username:
         username = email.split("@")[0] 
-    print("Username, email = ("+ username + ","+ email + ")")
+    # print("Username, email = ("+ username + ","+ email + ")")
     if email is None:
         # I need a valid email address for my user identification
         #flash('Authentication failed.')
@@ -225,7 +225,7 @@ def HTMLInject  ( html ):
              tag = soup.new_tag('a', href=item_string , target = "_blank")
              tag.string = item_string
              item.append(tag)
-    print(soup.prettify())
+    # print(soup.prettify())
     return soup.prettify()
 
 
