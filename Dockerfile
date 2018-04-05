@@ -20,6 +20,6 @@ RUN apt-get install -qq wget unzip build-essential cmake gcc libcunit1-dev libud
 ADD . /code
 WORKDIR /code
 #RUN pip install --no-cache-dir numpy scipy pandas matplotlib 
-RUN pip3 install -r requirements.txt --user
-CMD ["python3", "main.py"]
+RUN pip3 install -r requirements.txt 
 EXPOSE 5000
+CMD ["python3", "main.py"]
