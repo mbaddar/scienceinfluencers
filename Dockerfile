@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 RUN apt-get update
-RUN apt-get install -y locales python3-pip python3-dev python3-virtualenv fabric \
+RUN apt-get install -y locales python3 python3-pip python3-dev python3-virtualenv fabric \
       libpq-dev libjpeg-dev libxml2-dev libxslt-dev libfreetype6-dev libffi-dev \
       postgresql-client git curl wget
 # Set the locale
@@ -9,6 +9,8 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+# Check python version
+RUN python --version
 # Install dependencies
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
