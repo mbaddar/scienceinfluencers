@@ -1,11 +1,11 @@
 import base64
-import http.client
-import inspect
+#import http.client
+#import inspect
 import pdb
 import urllib.error
 import urllib.parse
 import urllib.request
-from pprint import pprint
+#from pprint import pprint
 import xml.etree.ElementTree as ET
 import requests
 from flask import (Flask, abort, redirect, render_template, request, session,
@@ -20,7 +20,7 @@ from flask_login import (LoginManager, current_user, login_required,
                          login_user, logout_user)
 from flask_navigation import Navigation
 from flask_wtf import FlaskForm
-from json2table import convert
+#from json2table import convert
 from wtforms import TextField, validators
 from html.parser import HTMLParser
 import re
