@@ -10,7 +10,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # Check python version
-RUN python --version
+RUN python3 --version
 # Install dependencies
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
@@ -20,6 +20,6 @@ RUN apt-get install -qq wget unzip build-essential cmake gcc libcunit1-dev libud
 ADD . /code
 WORKDIR /code
 #RUN pip install --no-cache-dir numpy scipy pandas matplotlib 
-RUN pip3 install -r requirements.txt
-CMD ["python", "main.py"]
+RUN pip3 install -r requirements.txt --user
+CMD ["python3", "main.py"]
 EXPOSE 5000
