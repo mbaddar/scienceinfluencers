@@ -250,7 +250,7 @@ def tesarxiv():
     summary_df = pd.DataFrame()
     
     if request.method == 'POST' and form.validate():
-        # Should have validation and pagination
+        # Should have pagination
         api_url = 'http://export.arxiv.org/api/query?search_query=all:' +\
                     (search_text if search_text else 'machine And all:learning') +\
                     '&start=0&max_results=10'

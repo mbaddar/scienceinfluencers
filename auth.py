@@ -2,6 +2,7 @@ from flask import url_for, current_app, redirect, request
 from rauth import OAuth2Service
 import oauth2
 import json, urllib.request , urllib.parse, urllib.error
+import requests
 
 class OAuthSignIn(object):
     providers = None
@@ -36,9 +37,10 @@ class OAuthSignIn(object):
 class GoogleSignIn(OAuthSignIn):
     def __init__(self):
         super(GoogleSignIn, self).__init__('google')
-        googleinfo = urllib.request.urlopen('https://accounts.google.com/.well-known/openid-configuration')
-        google_params = json.load(googleinfo)
-        print("Google Params " + google_params)
+        # googleinfo = urllib.request.urlopen('https://accounts.google.com/.well-known/openid-configuration')
+        # google_params = json.load(googleinfo)
+        response = requests.get('https://accounts.google.com/.well-known/openid-configuration')
+        google_params = response.json()
         self.service = OAuth2Service(
                 name='google',
                 client_id=self.consumer_id,
