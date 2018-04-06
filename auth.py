@@ -65,8 +65,9 @@ class GoogleSignIn(OAuthSignIn):
                       'grant_type': 'authorization_code',
                       'redirect_uri': self.get_callback_url()
                      },
-                decoder = json.loads
-        )
+                decoder = lambda b: json.loads( b.decode('utf-8') ) 
+                )
+                
         me = oauth_session.get('').json()
         return (me['name'],
                 me['email'])
