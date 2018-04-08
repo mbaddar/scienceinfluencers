@@ -217,6 +217,10 @@ def HTMLInject  ( html ):
     Injects a tags for URLs
     """
     soup = BeautifulSoup(html, 'html.parser')
+    table = soup.table
+    # Setting id for jquery 
+    table['id']='mytable'
+
     item_string = ""
     for item in soup.find_all('td'):
         item_string = item.string
@@ -227,6 +231,24 @@ def HTMLInject  ( html ):
              item.append(tag)
     # print(soup.prettify())
     return soup.prettify()
+
+def dataframe_to_html(dataframe, page_length = 50):
+    """
+    Return html of a dataframe with pagination support
+    """
+    base_html = """
+    %s
+    <script type="text/javascript">
+    $(document).ready( function() {
+        $('#mytable').DataTable();
+        //.DataTable( {"pageLength": %d} ); 
+        });
+    </script>
+    """
+    # %s above gets replaced by the html code of the dataframe so the base can be freely altered 
+    # Replace URLs with html hrefs
+    html = HTMLInject( dataframe.to_html( index = False ) ) 
+    return base_html % (html, page_length) 
 
 
 @app.route('/arxiv/', methods=['GET', 'POST'])
@@ -253,7 +275,7 @@ def tesarxiv():
         # Should have pagination
         api_url = 'http://export.arxiv.org/api/query?search_query=all:' +\
                     (search_text if search_text else 'machine And all:learning') +\
-                    '&start=0&max_results=10'
+                    '&start=0&max_results=100'
         response = requests.get(api_url)
         if response.status_code==200:
             xml_root = ET.fromstring(response.text)
@@ -277,8 +299,10 @@ def tesarxiv():
                             'Summary': summary,
                             'Semantic Scholar': citation_velocity}
             summary_df = pd.DataFrame(summary_dict)
-            summary_html = summary_df.to_html( index = False, classes="table table-striped table-hover") 
-            summary_html = HTMLInject( summary_html ) 
+            #summary_html = summary_df.to_html( index = False, classes="table table-striped table-hover") 
+            #summary_html = summary_df.to_html( index = False) 
+            #summary_html = HTMLInject( summary_html ) 
+            summary_html = dataframe_to_html( summary_df )
     return render_template("my_form.html", picture='positive_em.png',\
                             form=form, render = summary_html )
          
