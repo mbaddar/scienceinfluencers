@@ -1,8 +1,5 @@
 # **Science Infuencers:**
 
-
-
-
 ### An ArXiv paper search tool
 
 * Using [Arxiv](https://arxiv.org/) API to search for papers
@@ -10,7 +7,7 @@
 
 
 ### Content:
-<a id="1">1. Running the app:</a>
+<a href="1">1. Running the app:</a> <br>
 <a id="2">2. Containerization:</a>
 <a id="3">3. Implementation</a>
 <a id="4">4. Hurdles:</a>
