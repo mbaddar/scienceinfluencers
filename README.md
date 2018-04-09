@@ -1,12 +1,14 @@
-# ** Science Infuencers: **
+# **Science Infuencers:**
+
+<a id="0"></a>
 
 ### Running the app:
 * Container endpoint: 
 
 
-### An ArXiv paper search tool:
+### [An ArXiv paper search tool](#0):
 
-* Using [Arxiv](https://arxiv.org/){:target="_blank"} API to search for papers
+* Using [Arxiv](https://arxiv.org/) API to search for papers
 * Using [Semantic Scholar](https://www.semanticscholar.org/) to get influence details. Not all papers have matching records there.
 
 ### Containerization:
@@ -25,17 +27,12 @@
 * No database implementation
 * Google authentication implemented for login. However user data is not stored 
 
-
-
-
 ### Hurdles:
-* Using Alpine image at first
-* Docker cloud build tool. Extremely slow. NOT recommended 
-* Implementing Google authentication
+* Using Docker Cloud to build my docker image. 
+* Using Alpine Linux image at first. Since Pandas and many of its dependencies has to be built from source. 
 
 Future work:
 
- * Streaming
  * UX: Sorting and filtering
  * Timeline 
  * Twitter
