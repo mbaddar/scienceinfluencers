@@ -1,17 +1,25 @@
 # **Science Infuencers:**
 
-<a id="0"></a>
-
-### Running the app:
-* Container endpoint: 
 
 
-### [An ArXiv paper search tool](#0):
+
+### An ArXiv paper search tool
 
 * Using [Arxiv](https://arxiv.org/) API to search for papers
 * Using [Semantic Scholar](https://www.semanticscholar.org/) to get influence details. Not all papers have matching records there.
 
-### Containerization:
+
+### Content:
+<a id="1">1. Running the app:</a>
+<a id="2">2. Containerization:</a>
+<a id="3">3. Implementation</a>
+<a id="4">4. Hurdles:</a>
+<a id="5">5. Future work:</a>
+
+### [1. Running the app:](#1)
+* Container endpoint: 
+
+### [2. Containerization:](#2)
 
 * Docker image built on the AWS staging machine
 * Using [docker cloud](https://cloud.docker.com/) to proxy container hosting on AWS
@@ -20,25 +28,22 @@
 * Discarded docker cloud build and used an AWS instance to build the image then push it to docker hub 
 * Used google clould shell (Tutorial [here](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app)) to build the image and push it to GCP then create a Kubernetes cluster. Still in progress
 
-### Implementation:
+### [3. Implementation:](#3):
 
 * Arxiv [API](https://arxiv.org/help/api/index): Outputs XML. I parsed it into a pandas dataframe and convert it to HTML, then manually inject hrefs for the URLs as pandas cannot do that
 * Using JQuery and DataTables to add sort and pagination to the results
 * No database implementation
 * Google authentication implemented for login. However user data is not stored 
 
-### Hurdles:
+### [4. Hurdles:](#4):
 * Using Docker Cloud to build my docker image. 
 * Using Alpine Linux image at first. Since Pandas and many of its dependencies has to be built from source. 
 
-Future work:
+### [5. Future work:](#5)
 
- * UX: Sorting and filtering
- * Timeline 
- * Twitter
- * L8N
- * DB
- * Pagination
- * Add more query capabilities: Search by title, author, etc
+ * Adding Timeline: Histogram trends over time 
+ * Include twitter influence analysis. Semantic scholar does this but no API was exposed
+ * Database
+ * Add more ArXiv [query](https://arxiv.org/find) capabilities: Search by title, author, etc
 
  
