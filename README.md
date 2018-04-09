@@ -7,7 +7,7 @@
 
 
 ### Content:
-<a href="1">1. Running the app:</a> <br>
+<a href="#1">1. Running the app:</a> <br>
 <a id="2">2. Containerization:</a>
 <a id="3">3. Implementation</a>
 <a id="4">4. Hurdles:</a>
