@@ -260,7 +260,6 @@ def tesarxiv():
     #     flash("Please enter something to search for!")
     #     return redirect(url_for('tesarxiv') )
         
-    aton_object = None
     # Create a dataframe for the information displayed to the user
     ids = []
     updated = []
