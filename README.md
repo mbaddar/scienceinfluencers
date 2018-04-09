@@ -19,7 +19,7 @@
 
 
 ### 1. Running the app: <a  id="1"></a> 
-* Container endpoint:
+* Container endpoint: http://scienceinfluencers-3bb32e13-1.c46e36e7.cont.dockerapp.io/
 
 ### 2. Containerization: <a id="2"></a>
 * Docker image built on the AWS staging machine
@@ -35,8 +35,8 @@
 * Arxiv [API](https://arxiv.org/help/api/index): Outputs XML. I parsed it into a pandas dataframe and convert it to HTML, then manually inject hrefs for the URLs as pandas cannot do that
 * Using JQuery and DataTables to add sort and pagination to the results
 * No database implementation
-* Google authentication implemented for login. However user data is not stored
-
+* Google [OAuth 2.0](https://developers.google.com/identity/protocols/OAuth2) authentication implemented for login. 
+* Code in main.py. Google code uses auth.py
 
 ### 4. Hurdles: <a id="4"></a>
 * Using Docker Cloud to build my docker image.
@@ -44,7 +44,9 @@
 
   
 ### 5. Future work: <a id="5"></a>
+* Rearranging results. Expanding summary. More UX etc.
 * Adding Timeline: Histogram trends over time
 * Include twitter influence analysis. Semantic scholar does this but no API was exposed
 * Database
 * Add more ArXiv [query](https://arxiv.org/find) capabilities: Search by title, author, etc
+* Completing Kubernetes cluster configuration
