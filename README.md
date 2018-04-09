@@ -7,20 +7,17 @@
 
 ### Content:
 [1. Running the app:](#1) 
-
 [2. Containerization:](#2)
-
 [3. Implementation](#3)
-
 [4. Hurdles:](#4)
-
 [5. Future work:](#5)
 
 
-<a  id="1"></a>[1. Running the app:](#1)
+
+<a  id="1"></a>### 1. Running the app:
 * Container endpoint:
 
-<a id="2"></a>[2. Containerization:](#2)
+<a id="2"></a>### 2. Containerization:
 * Docker image built on the AWS staging machine
 * Using [docker cloud](https://cloud.docker.com/) to proxy container hosting on AWS
 * Image pushed to [Docker hub](https://hub.docker.com/r/baddar/scienceinfluencers/) repository: https://hub.docker.com/r/baddar/scienceinfluencers/
@@ -30,19 +27,19 @@
 
   
 
-<a id="3"></a>[3. Implementation:](#3)
+<a id="3"></a>### 3. Implementation:
 * Arxiv [API](https://arxiv.org/help/api/index): Outputs XML. I parsed it into a pandas dataframe and convert it to HTML, then manually inject hrefs for the URLs as pandas cannot do that
 * Using JQuery and DataTables to add sort and pagination to the results
 * No database implementation
 * Google authentication implemented for login. However user data is not stored
 
 
-<a id="4"></a>[4. Hurdles:](#4)
+<a id="4"></a>### 4. Hurdles:
 * Using Docker Cloud to build my docker image.
 * Using Alpine Linux image at first. Since Pandas and many of its dependencies has to be built from source.
 
   
-<a id="5"></a>[5. Future work:](#5)
+<a id="5"></a>### 5. Future work:
 * Adding Timeline: Histogram trends over time
 * Include twitter influence analysis. Semantic scholar does this but no API was exposed
 * Database
